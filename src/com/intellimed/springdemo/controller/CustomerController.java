@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.intellimed.springdemo.dao.CustomerDao;
 import com.intellimed.springdemo.entity.Customer;
+import com.intellimed.springdemo.service.CustomerService;
 
 
 @Controller
@@ -18,13 +19,13 @@ import com.intellimed.springdemo.entity.Customer;
 public class CustomerController {
 	
 	@Autowired
-	private CustomerDao customerDao;
+	private CustomerService customerService;
 
 	//@RequestMapping("/list")
 	//@RequestMapping(path="/list", method=RequestMethod.GET)
 	@GetMapping("/list")
 	public String listCustomers(Model model){
-		List<Customer> customers = customerDao.getCustomers();
+		List<Customer> customers = customerService.getCustomers();
 		
 		model.addAttribute("customers", customers);
 		return "list-customers";
