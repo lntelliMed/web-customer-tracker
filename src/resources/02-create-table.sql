@@ -32,6 +32,18 @@ TABLESPACE pg_default;
 ALTER TABLE public.customer
     OWNER to postgres;
 
+CREATE SEQUENCE public.customer_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.customer_id_seq
+    OWNER TO postgres;
+
+
+
 INSERT INTO customer VALUES (1,'David','Adams','david@intellimedllc.com');
 INSERT INTO customer VALUES (2,'John','Doe','john@intellimedllc.com');
 INSERT INTO customer VALUES (3,'Ajay','Rao','ajay@intellimedllc.com');

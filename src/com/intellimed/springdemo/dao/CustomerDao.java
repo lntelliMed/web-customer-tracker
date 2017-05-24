@@ -7,4 +7,6 @@ import com.intellimed.springdemo.entity.Customer;
 public interface CustomerDao {
 
 	List<Customer>  getCustomers();
+
+	void saveCustomer(Customer customer);
 }

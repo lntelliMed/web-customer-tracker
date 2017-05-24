@@ -5,13 +5,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="customer")
+@SequenceGenerator(name = "customer_id_seq", allocationSize=1, sequenceName = "customer_id_seq")
 public class Customer {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.AUTO, generator="customer_id_seq")
 	@Column(name="id")
 	private int id;
 	
@@ -24,7 +26,7 @@ public class Customer {
 	@Column(name="email")
 	private String email;
 	
-	private Customer(){
+	public Customer(){
 		
 	}
 
