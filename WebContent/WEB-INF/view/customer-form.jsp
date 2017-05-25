@@ -25,6 +25,7 @@
 <div id="container">
 <h3>Save Customer</h3>
 <form:form action="saveCustomer" modelAttribute="customer">
+	<form:hidden path="id"/>
 		<table>
 			<tbody>
 				<tr>
@@ -41,7 +42,7 @@
 				</tr>
 				<tr>
 					<td><label></label></td>
-					<td><input type="submit" vlue="Save"></td>
+					<td><input type="submit" value="Save"></td>
 				</tr>
 			</tbody>
 		</table>
